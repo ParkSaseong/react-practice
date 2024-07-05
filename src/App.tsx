@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import Wrapper from "./wrapper";
+import Text from "./text";
 import './App.css';
 
+interface TextItem {
+    text: string;
+    color: string;
+}
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const arr: TextItem[] = [
+        { text: "한 글자", color: "black" },
+        { text: "두 글자", color: "red" },
+        { text: "세 글자", color: "blue" }
+    ];
+
+    return (
+        <div className="App">
+            <Wrapper>
+                <Text text={arr[0].text} color={arr[0].color} />
+                <Text text={arr[1].text} color={arr[1].color} />
+            </Wrapper>
+            <Text text={arr[2].text} color={arr[2].color} />
+        </div>
+    );
 }
 
 export default App;
