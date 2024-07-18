@@ -18,7 +18,7 @@ const StyleDiv = styled.div<StyleDivProps>`
 
 const Wrapper = ({children}: WrapperProps) => {
     return(
-        <StyleDiv borderColor="skyblue">
+        <StyleDiv borderColor="black">
             {children}
         </StyleDiv>
         // <div>

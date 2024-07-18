@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import UseEffect from './components/useEffect/useEffect'
-import UseEffectDeps from "./components/useEffect/UseEffectDeps";
+import LoginPage from "./assignment/component/LoginPage"
 
 function App() {
     return (
         <div className="App">
-            <UseEffectDeps/>
+            <LoginPage/>
         </div>
     );
 }
