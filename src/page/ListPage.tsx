@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Hello, {HelloProps} from '../components/Hello';
 import Wrapper from "../components/Wrapper";
-import User from "../components/User";
 
 const ListPage = () => {
     const [name, setName] = useState<string>("");
@@ -41,33 +40,37 @@ const ListPage = () => {
         setIsSpecial(false);
     }
 
-    return(
+    return (
         <>
             <Wrapper>
-                {items.map((item) => (
-                        <Hello
-                            name={item.name}
-                            color={item.color}
-                            isSpecial={item.isSpecial}
-                        />
+                {items.map((item, index) => (
+                    /**
+                     * gpt
+                     */
+                    <Hello
+                        key={index}
+                        name={item.name}
+                        color={item.color}
+                        isSpecial={item.isSpecial}
+                    />
                 ))}
             </Wrapper>
 
             <label aria-label="이름">
-                <input id="이름" placeholder="이름 입력" value={name} onChange={setNameHandle} style={{width: 150, marginRight: 15}} />{/*input 완성 시키기*/}
+                <input id="이름" placeholder="이름 입력" value={name} onChange={setNameHandle}
+                       style={{width: 150, marginRight: 15}}/>{/*input 완성 시키기*/}
             </label>
             <label aria-label="색">
-                <input id="색" placeholder="색상 입력" value={color} onChange={setColorHandle} style={{width: 150, marginRight: 15}}/>{/*input 완성 시키기*/}
+                <input id="색" placeholder="색상 입력" value={color} onChange={setColorHandle}
+                       style={{width: 150, marginRight: 15}}/>{/*input 완성 시키기*/}
             </label>
             <label>
-                <input type="checkbox" checked={isSpecial} onChange={setCheck}/>{/*input 완성 시키기*/}
+                <input type="checkbox" checked={isSpecial} onChange={setCheck}/>{/*gpt*/}
                 {isSpecial ? '보여준다' : '안보여준다'}
             </label>
-            <button onClick={itemRegister}>추가</button>
-            {/*버튼 추가*/}
+            <button onClick={itemRegister}>추가{/*gpt*/}</button>
         </>
     );
-
 }
 
 export default ListPage

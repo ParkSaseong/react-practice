@@ -7,9 +7,10 @@ export interface HelloProps {
 }
 
 function Hello({name, color, isSpecial}: HelloProps) {
+    let a = "undefined"
     return (
         <div>
-            {isSpecial ? (
+            {a ? (
                     <h1 style={{color: color}}>
                         {name}
                     </h1>
