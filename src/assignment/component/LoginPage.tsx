@@ -1,13 +1,30 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import styles from "../styles/loginpage.module.scss"
+import { ToastContainer, toast } from "react-toastify";
 
 function LoginPage() {
-    const [name, SetName] = useState<string>();
-    const [password, SetPassword] = useState<string>();
+    const [inputs, setInputs] = useState({
+        id: '',
+        password: '',
+    });
+
+    const {id, password} = inputs;
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {value, id} = e.target; // 우선 e.target 에서 name 과 value 를 추출
+        setInputs({
+            ...inputs, // 기존의 input 객체를 복사한 뒤
+            [id]: value // name 키를 가진 값을 value 로 설정
+        });
+    }
 
     const LoginOnClick = () => {
-
+        alert(`아이디 : ${id}\n비밀번호 : ${password}`)
+        setInputs({
+            id: '',
+            password: '',
+        })
     }
 
     return (
@@ -21,10 +38,10 @@ function LoginPage() {
                     <div className={styles.inwrapper}>
                         <div>
                             <label aria-label="아이디">
-                                <input id="아이디" placeholder="아이디" className={styles.input}/>
+                                <input id="id" placeholder="아이디" className={styles.input} onChange={onChange} value={id}/>
                             </label>
                             <label aria-label="비밀번호">
-                                <input id="비밀번호" placeholder="비밀번호" className={styles.input}/>
+                                <input id="password" placeholder="비밀번호" className={styles.input} onChange={onChange} value={password}/>
                             </label>
                         </div>
 
@@ -42,13 +59,13 @@ function LoginPage() {
                         </div>
 
                         <div className={styles.extraButtons}>
-                            <label aria-label="회원가입" className={styles.extrabuttonLeft}>
+                            <label aria-label="회원가입" className={styles.extrabutton}>
                                 <input id="회원가입" type="button" value="회원가입"/>
                             </label>
-                            <label aria-label="계정찾기" className={styles.extrabuttonRight}>
+                            <label aria-label="계정찾기" className={styles.extrabutton}>
                                 <input id="계정찾기" type="button" value="계정찾기" />
                             </label>
-                            <label aria-label="비밀번호찾기" className={styles.extrabuttonRight}>
+                            <label aria-label="비밀번호찾기" className={styles.extrabutton}>
                                 <input id="비밀번호찾기" type="button" value="비밀번호 찾기"/>
                             </label>
                         </div>
