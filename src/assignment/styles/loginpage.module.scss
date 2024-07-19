@@ -7,17 +7,20 @@
   padding: 20px;
 }
 
-.input{
-  width: 100%;
-      padding: 10px 0;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      outline: none;
-      font-size: 16px;
-      color: #333;
+.margin{
+  margin: auto auto;
 }
 
-
+.input{
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
 
 .inwrapper {
   display: flex;
@@ -31,62 +34,50 @@
 
 .checkbox{
   display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    width: 100%;
-    font-size: 14px;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 14px;
 }
 
-  .loginbutton {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  .loginbutton:hover {
-    background-color: #0056b3;
-  }
+.loginbutton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
 
 .loginbutton:hover {
-    background-color: #0056b3;
-  }
+  background-color: #0056b3;
+}
 
-//.extra-buttons {
-//  display: flex;
-//  justify-content: space-between;
-//  width: 100%;
-//  margin-top: 10px;
-//  height: 26px;
-//  flex-direction: row;
-//
-//  input[type="button"] {
-//    width: 100%;
-//    padding: 10px;
-//    border: 1px solid #ccc;
-//    border-radius: 4px;
-//    cursor: pointer;
-//    background-color: white;
-//  }
-//}
+.loginbutton:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .extra-buttons {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
+  flex-direction: row;
 }
 
 .extrabutton {
   text-align: center;
   font-size: 14px;
-  //justify-content: flex-start;
 
   input[type="button"] {
     border: none;
@@ -135,4 +126,12 @@
   input[type="button"]:hover {
     text-decoration: underline;
   }
+}
+
+.right{
+  text-align: right;
+}
+
+.left{
+  text-align: left;
 }
